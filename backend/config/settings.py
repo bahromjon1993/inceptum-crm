@@ -92,16 +92,23 @@ if DATABASE_URL:
             conn_health_checks=True,
         )
     }
-else:
+elif os.getenv('DB_ENGINE'):
     DATABASES = {
         'default': {
-            'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
+            'ENGINE': os.getenv('DB_ENGINE'),
             'NAME': os.getenv('DB_NAME', 'inceptum_db'),
             'USER': os.getenv('DB_USER', 'postgres'),
             'PASSWORD': os.getenv('DB_PASSWORD', '1234'),
             'HOST': os.getenv('DB_HOST', '127.0.0.1'),
             'PORT': os.getenv('DB_PORT', '5432'),
             'CONN_MAX_AGE': 60,
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 
