@@ -41,4 +41,5 @@ class ExamResult(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.student.full_name} - {self.score} ball ({'O\'tdi' if self.passed else 'Yiqildi'})"
+        status = "O'tdi" if self.passed else "Yiqildi"
+        return f"{self.student.full_name} - {self.score} ball ({status})"
