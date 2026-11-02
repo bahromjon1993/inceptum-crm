@@ -1,0 +1,39 @@
+services:
+  # Backend: Django REST API
+  - type: web
+    name: inceptum-crm-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: "bash build.sh"
+    startCommand: "gunicorn config.wsgi:application --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "*"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: inceptum-db
+          property: connectionString
+
+  # Frontend: Vite React SPA
+  - type: web
+    name: inceptum-crm-frontend
+    runtime: static
+    rootDir: frontend
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: "dist"
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+
+databases:
+  - name: inceptum-db
+    databaseName: inceptum_crm
+    user: inceptum_user
+    plan: free

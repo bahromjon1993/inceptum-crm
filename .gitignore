@@ -1,0 +1,56 @@
+# Python / Virtualenv
+venv/
+backend/venv/
+.env
+backend/.env
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+*.pyc
+__pycache__/
+*/__pycache__/
+*/**/__pycache__/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django static and media files
+backend/staticfiles/
+backend/media/
+staticfiles/
+media/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+frontend/dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Databases and Backups
+*.sqlite3
+*.db
+backend/backups/*.sql
+!backend/backups/inceptum_db_initial_20261027_174704.sql
+
+# IDEs & System
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large media files and test scratch
+*.mp4
+*.webm
+scratch/
+

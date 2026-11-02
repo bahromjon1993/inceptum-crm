@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: inceptum_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: inceptum_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: inceptum_backend
+    restart: always
+    command: >
+      sh -c "python manage.py migrate &&
+             python scripts/seed_data.py &&
+             gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+    environment:
+      DEBUG: "False"
+      SECRET_KEY: "inceptum-crm-production-secret-docker-key"
+      ALLOWED_HOSTS: "*"
+      DATABASE_URL: "postgresql://postgres:postgrespassword@db:5432/inceptum_db"
+      CORS_ALLOW_ALL_ORIGINS: "True"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+

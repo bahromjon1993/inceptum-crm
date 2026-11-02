@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SoffCRM Clean Light Theme by Default */
+    --background: 220 33% 97.5%; /* #f4f6fc */
+    --foreground: 222 47% 11%;   /* #0f172a */
+
+    --card: 0 0% 100%;           /* #ffffff */
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 243 82% 65%;       /* #5d5fef - iconic SoffCRM purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 20% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 243 82% 96%;
+    --accent-foreground: 243 82% 50%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 18% 90%;
+    --input: 220 18% 88%;
+    --ring: 243 82% 65%;
+
+    --radius: 0.65rem;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 243 82% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4.8% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4.8% 14%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4.8% 16%;
+    --input: 240 4.8% 16%;
+    --ring: 243 82% 65%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-indigo-500/20 selection:text-indigo-600;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom SoffCRM scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+/* SoffCRM soft card shadows and highlights */
+.soff-card {
+  background: #ffffff;
+  border: 1px solid #e8ecf4;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+.glass-dropdown {
+  background: rgba(20, 20, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Badge glows */
+.badge-linear {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+.badge-linear:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* ==========================================================================
+   SOFFCRM COMPLETE DARK MODE SYSTEM
+   ========================================================================== */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0b0f19 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Dark mode surfaces */
+html.dark header,
+html.dark nav {
+  background-color: #111827 !important;
+  border-color: #1f293d !important;
+}
+
+html.dark .soff-card,
+html.dark .bg-white {
+  background-color: #111827 !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-100,
+html.dark .bg-zinc-50,
+html.dark .bg-\[\#f4f6fc\],
+html.dark .bg-\[\#f8fafc\],
+html.dark .bg-\[\#f3f6fa\] {
+  background-color: #0b0f19 !important;
+}
+
+html.dark .bg-slate-100\/50,
+html.dark .bg-slate-100\/80,
+html.dark .bg-slate-200\/50 {
+  background-color: #1f293d !important;
+}
+
+/* Dark mode borders */
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-\[\#e8ecf4\],
+html.dark .border-border {
+  border-color: #1f293d !important;
+}
+
+html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1f293d !important;
+}
+
+/* Dark mode typography */
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* Dark mode interactive states */
+html.dark .hover\:bg-slate-50:hover,
+html.dark .hover\:bg-slate-100:hover,
+html.dark .hover\:bg-slate-100\/80:hover {
+  background-color: #1f293d !important;
+}
+
+/* Inputs, selects, and textareas */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #0b0f19 !important;
+  border-color: #1f293d !important;
+  color: #f8fafc !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Table headers & cells */
+html.dark th {
+  background-color: #111827 !important;
+  color: #94a3b8 !important;
+  border-color: #1f293d !important;
+}
+
+html.dark td {
+  border-color: #1f293d !important;
+}
+
+html.dark tr:hover td {
+  background-color: #1a2234 !important;
+}
+
+/* Modals & Dropdowns in dark mode */
+html.dark .shadow-xl,
+html.dark .shadow-2xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE MEDIA UTILITIES
+   ========================================================================== */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch momentum scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .mobile-compact-card {
+    padding: 0.75rem !important;
+  }
+
+  .responsive-table-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    bottom: 0 !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-grid-compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
