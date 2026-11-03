@@ -55,60 +55,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
   // Payroll selected row for detail preview
   const [selectedSalaryMonth, setSelectedSalaryMonth] = useState<string | null>(null);
 
-  const salaryRows = [
-    {
-      id: 1,
-      month: "Oktabr 2026",
-      staffCount: 7,
-      baseSalary: 4000000,
-      percent: 22520500,
-      lessonHours: "—",
-      studentCount: "—",
-      bonus: "—",
-      penalty: "—",
-      advance: -15293000,
-      total: 11227500,
-    },
-    {
-      id: 2,
-      month: "Sentabr 2026",
-      staffCount: 7,
-      baseSalary: 4000000,
-      percent: 22811250,
-      lessonHours: "0",
-      studentCount: "0",
-      bonus: "—",
-      penalty: "—",
-      advance: -15470000,
-      total: 11341250,
-    },
-    {
-      id: 3,
-      month: "Avgust 2026",
-      staffCount: 8,
-      baseSalary: 4010000,
-      percent: 22216850,
-      lessonHours: "0",
-      studentCount: "0",
-      bonus: "—",
-      penalty: "—",
-      advance: -20981000,
-      total: 5245850,
-    },
-    {
-      id: 4,
-      month: "Iyul 2026",
-      staffCount: 8,
-      baseSalary: 4000000,
-      percent: 21950000,
-      lessonHours: "0",
-      studentCount: "0",
-      bonus: "—",
-      penalty: "—",
-      advance: -18500000,
-      total: 7450000,
-    },
-  ];
+  const salaryRows: any[] = [];
 
   const handleExport = () => {
     const csvContent =
@@ -324,7 +271,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             </div>
             <div>
               <div className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                50 445 000 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">Tushumlar</div>
             </div>
@@ -337,7 +284,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             </div>
             <div>
               <div className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                15 293 000 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">Chiqimlar</div>
             </div>
@@ -350,7 +297,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             </div>
             <div>
               <div className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                35 152 000 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">Foyda</div>
             </div>
@@ -364,7 +311,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
               </div>
               <div>
                 <div className="text-xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                  141 810 355 UZS
+                  0 UZS
                 </div>
                 <div className="text-xs text-slate-500 font-medium">Aktiv balans</div>
               </div>
@@ -385,7 +332,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             </div>
             <div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                736 315.69 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">LTV</div>
             </div>
@@ -411,7 +358,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             </div>
             <div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                262 734 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">O'rtacha to'lov</div>
             </div>
@@ -443,7 +390,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
                 fill="transparent"
                 stroke="#deb89b"
                 strokeWidth="16"
-                strokeDasharray="202.4 251.3"
+                strokeDasharray="0 251.3"
                 strokeDashoffset="0"
                 className="transition-all duration-700 ease-out"
               />
@@ -455,7 +402,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
                 fill="transparent"
                 stroke="#e06a5b"
                 strokeWidth="16"
-                strokeDasharray="48.9 251.3"
+                strokeDasharray="0 251.3"
                 strokeDashoffset="-202.4"
                 className="transition-all duration-700 ease-out"
               />
@@ -463,7 +410,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
               <span className="text-xs font-semibold text-slate-400">Jami</span>
               <span className="text-base font-black text-slate-800 dark:text-slate-100">
-                50.4M UZS
+                0 UZS
               </span>
             </div>
           </div>
@@ -473,13 +420,13 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-[#deb89b]" />
               <span className="text-slate-600 dark:text-slate-300 font-medium">
-                Naqt: <strong>80.54%</strong>
+                Naqt: <strong>0%</strong>
               </span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-[#e06a5b]" />
               <span className="text-slate-600 dark:text-slate-300 font-medium">
-                Click: <strong>19.46%</strong>
+                Click: <strong>0%</strong>
               </span>
             </div>
           </div>
@@ -540,20 +487,20 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
 
               {/* Tushumlar Line (Yellow/Amber curve) */}
               <path
-                d="M 60 180 Q 150 40, 240 25 T 350 55 T 460 40 T 570 200"
+                d="M 60 200 L 570 200"
                 fill="none"
                 stroke="#eab308"
                 strokeWidth="3.5"
                 strokeLinecap="round"
               />
               {/* Points */}
-              <circle cx="240" cy="25" r="4" fill="#eab308" stroke="#fff" strokeWidth="2" />
-              <circle cx="350" cy="55" r="4" fill="#eab308" stroke="#fff" strokeWidth="2" />
-              <circle cx="460" cy="40" r="4" fill="#eab308" stroke="#fff" strokeWidth="2" />
+              
+              
+              
 
               {/* Foyda Line (Green curve) */}
               <path
-                d="M 60 190 Q 150 110, 240 105 T 350 115 T 460 70 T 570 210"
+                d="M 60 200 L 570 200"
                 fill="none"
                 stroke="#22c55e"
                 strokeWidth="3.5"
@@ -562,7 +509,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
 
               {/* Chiqimlar Line (Rose curve) */}
               <path
-                d="M 60 195 Q 150 115, 240 100 T 350 110 T 460 130 T 570 215"
+                d="M 60 200 L 570 200"
                 fill="none"
                 stroke="#f43f5e"
                 strokeWidth="3"
@@ -666,7 +613,14 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-medium">
-                {salaryRows.map((row) => (
+                {salaryRows.length === 0 ? (
+                  <tr>
+                    <td colSpan={12} className="py-12 text-center text-slate-400 font-medium">
+                      Ish haqi hisobotlari mavjud emas
+                    </td>
+                  </tr>
+                ) : (
+                  salaryRows.map((row) => (
                   <tr
                     key={row.id}
                     onClick={() =>
@@ -707,7 +661,7 @@ export function FinancePage({ onOpenPaymentModal }: FinancePageProps) {
                       <ChevronRight className="w-4 h-4 ml-auto text-slate-400" />
                     </td>
                   </tr>
-                ))}
+                )))}
               </tbody>
             </table>
           </div>

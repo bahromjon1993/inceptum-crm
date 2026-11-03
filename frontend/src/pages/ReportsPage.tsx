@@ -50,191 +50,13 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
   const [activeTeacherTab, setActiveTeacherTab] = useState<"TEACHERS" | "STAFF">("TEACHERS");
   const [paymentSearch, setPaymentSearch] = useState("");
 
-  const teachersPaymentList = [
-    {
-      id: 1,
-      name: "Feruzbek teacher",
-      groups: 4,
-      courses: ["CEFR", "Elementary", "Pre-IELTS 1"],
-      students: 122,
-      paid: "13 380 000 so'm",
-      debt: "-585 347 so'm",
-    },
-    {
-      id: 2,
-      name: "Marjona teacher",
-      groups: 6,
-      courses: ["KIDS 1", "KIDS 2"],
-      students: 98,
-      paid: "8 000 000 so'm",
-      debt: "-1 222 308 so'm",
-    },
-    {
-      id: 3,
-      name: "Axmadjon teacher",
-      groups: 5,
-      courses: ["IELTS Graduation", "KIDS 4", "Beginner", "Pre-IELTS 2", "Pre-IELTS 1"],
-      students: 155,
-      paid: "20 090 000 so'm",
-      debt: "-1 100 383 so'm",
-    },
-    {
-      id: 4,
-      name: "Gulasal teacher",
-      groups: 4,
-      courses: ["IELTS Graduation", "Beginner", "Pre-IELTS 2"],
-      students: 77,
-      paid: "8 975 000 so'm",
-      debt: "-394 744 so'm",
-    },
-  ];
+  const teachersPaymentList: any[] = [];
 
   // ================= 2. O'QUVCHILAR TO'LOVI (frame_056 & frame_057) =================
   const [studentPaymentSearch, setStudentPaymentSearch] = useState("");
   const [selectedReceipt, setSelectedReceipt] = useState<any | null>(null);
 
-  const studentPayments = [
-    {
-      id: 1,
-      studentId: "2392",
-      studentName: "Abduhalilov Sardorbek",
-      group: "Feruzbek O 4-6",
-      teacher: "Feruzbek teacher",
-      amount: "300 000 so'm",
-      bonus: "—",
-      date: "2026-10-28 17:54",
-      period: "Oktyabr 2026",
-      comment: "chek boyni...",
-      officer: "Imron Erkinov",
-      method: "Click",
-    },
-    {
-      id: 2,
-      studentId: "2388",
-      studentName: "Sayfiddinova Diora",
-      group: "Ahmadjon E 4-6",
-      teacher: "Axmadjon teacher",
-      amount: "300 000 so'm",
-      bonus: "—",
-      date: "2026-10-27 16:08",
-      period: "Oktyabr 2026",
-      comment: "noyabr uch...",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 3,
-      studentId: "2385",
-      studentName: "Abdurahmananova Maftuna",
-      group: "Feruzbek E 4-6",
-      teacher: "Feruzbek teacher",
-      amount: "250 000 so'm",
-      bonus: "—",
-      date: "2026-10-27 16:05",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 4,
-      studentId: "2379",
-      studentName: "Abdullajanova Ra'no",
-      group: "Gulasal E 2-4",
-      teacher: "Gulasal teacher",
-      amount: "225 000 so'm",
-      bonus: "—",
-      date: "2026-10-27 13:54",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 5,
-      studentId: "2371",
-      studentName: "Isroilov Ilyosbek",
-      group: "Ahmadjon E 2-4",
-      teacher: "Axmadjon teacher",
-      amount: "400 000 so'm",
-      bonus: "—",
-      date: "2026-10-26 17:29",
-      period: "Oktyabr 2026",
-      comment: ".",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 6,
-      studentId: "2364",
-      studentName: "Raxmonjanova Durdona",
-      group: "Gulasal E 4-6",
-      teacher: "Gulasal teacher",
-      amount: "250 000 so'm",
-      bonus: "—",
-      date: "2026-10-25 19:00",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 7,
-      studentId: "2358",
-      studentName: "Yusufjanov Javohir",
-      group: "Ahmadjon E 4-6",
-      teacher: "Axmadjon teacher",
-      amount: "300 000 so'm",
-      bonus: "—",
-      date: "2026-10-24 18:09",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Click",
-    },
-    {
-      id: 8,
-      studentId: "2352",
-      studentName: "Abdurashidov Shoxrux",
-      group: "Ahmadjon E 4-6",
-      teacher: "Axmadjon teacher",
-      amount: "300 000 so'm",
-      bonus: "—",
-      date: "2026-10-24 17:44",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Click",
-    },
-    {
-      id: 9,
-      studentId: "2349",
-      studentName: "Ahmadjanov Abbosbek",
-      group: "Feruzbek E 6-8",
-      teacher: "Feruzbek teacher",
-      amount: "300 000 so'm",
-      bonus: "—",
-      date: "2026-10-24 14:49",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-    {
-      id: 10,
-      studentId: "2345",
-      studentName: "Qodirjanov Boburbek",
-      group: "Feruzbek E 6-8",
-      teacher: "Feruzbek teacher",
-      amount: "130 000 so'm",
-      bonus: "—",
-      date: "2026-10-24 13:12",
-      period: "Oktyabr 2026",
-      comment: "—",
-      officer: "Imron Erkinov",
-      method: "Naqt",
-    },
-  ];
+  const studentPayments: any[] = [];
 
   // ================= 3. KETISH VA GURUH O'ZGARISHI TAHLILI (frame_058) =================
   const [isReasonsModalOpen, setIsReasonsModalOpen] = useState(false);
@@ -367,11 +189,11 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex justify-between items-center">
                 <span className="text-slate-400 text-sm">💳</span>
                 <span className="px-1.5 py-0.2 rounded bg-rose-50 text-rose-600 text-[10px] font-bold flex items-center">
-                  ↓ -2.8%
+                  0%
                 </span>
               </div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                50 445 000
+                0
               </div>
               <div className="text-[11px] text-slate-500 font-medium">Jami to'lov summasi</div>
             </div>
@@ -380,11 +202,11 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex justify-between items-center">
                 <span className="text-slate-400 text-sm">%</span>
                 <span className="px-1.5 py-0.2 rounded bg-rose-50 text-rose-600 text-[10px] font-bold flex items-center">
-                  ↓ -31.37%
+                  0%
                 </span>
               </div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                22%
+                0%
               </div>
               <div className="text-[11px] text-slate-500 font-medium">Vaqtida to'lovlar statistikasi</div>
             </div>
@@ -397,7 +219,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 </span>
               </div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                8 kun
+                0 kun
               </div>
               <div className="text-[11px] text-slate-500 font-medium">Kechikkan to'lovlar statistikasi</div>
             </div>
@@ -410,7 +232,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 </span>
               </div>
               <div className="text-lg font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                99 990
+                0
               </div>
               <div className="text-[11px] text-slate-500 font-medium">Jami chegirmalar summasi</div>
             </div>
@@ -524,7 +346,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                       </td>
                       <td className="py-3.5 px-4">
                         <div className="flex flex-wrap gap-1">
-                          {row.courses.map((c) => (
+                          {(row.courses || []).map((c: any) => (
                             <span
                               key={c}
                               className="px-2 py-0.5 rounded-full text-[10px] font-semibold border border-indigo-200 text-[#5d5fef] bg-indigo-50/40 dark:bg-indigo-950/40"
