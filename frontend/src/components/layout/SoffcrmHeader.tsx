@@ -13,6 +13,7 @@ import {
   Bell,
   Shield,
   ChevronDown,
+  ChevronLeft,
   ChevronRight,
   Sun,
   Moon,
@@ -66,6 +67,37 @@ export function SoffcrmHeader({
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeNotifTab, setActiveNotifTab] = useState<"all" | "payment" | "leads">("all");
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Sub-navbar scroll indicator and arrow controls
+  const navContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (!navContainerRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = navContainerRef.current;
+    setCanScrollLeft(scrollLeft > 15);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 15);
+  };
+
+  const scrollNav = (direction: "left" | "right") => {
+    if (!navContainerRef.current) return;
+    navContainerRef.current.scrollBy({
+      left: direction === "left" ? -240 : 240,
+      behavior: "smooth",
+    });
+    setTimeout(checkScroll, 300);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const timer = setTimeout(checkScroll, 500);
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, []);
 
   // Realistic CRM Notifications
   const [notifications, setNotifications] = useState([
@@ -676,9 +708,45 @@ export function SoffcrmHeader({
         </div>
       )}
 
-      {/* 2. SUB-NAVBAR TABS (Scrollable & Responsive) */}
-      <div className="w-full bg-white dark:bg-[#111827] border-t border-slate-100/80 dark:border-slate-800/80">
-        <div className="max-w-[1720px] mx-auto px-2 sm:px-6 overflow-x-auto lg:overflow-visible no-scrollbar py-1.5 scroll-smooth touch-scroll">
+      {/* 2. SUB-NAVBAR TABS (Scrollable & Responsive with Arrows) */}
+      <div className="w-full bg-white dark:bg-[#111827] border-t border-slate-100/80 dark:border-slate-800/80 relative group">
+        {/* Left Scroll Arrow Button */}
+        {canScrollLeft && (
+          <div className="absolute left-0 top-0 bottom-0 z-20 flex items-center bg-gradient-to-r from-white via-white/95 to-transparent dark:from-[#111827] dark:via-[#111827]/95 pr-4 pl-1 pointer-events-auto">
+            <button
+              onClick={() => scrollNav("left")}
+              className="h-7 w-7 rounded-full bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 cursor-pointer transition-transform active:scale-95"
+              title="Oldingi bo'limlar"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        {/* Right Scroll Arrow Button */}
+        {canScrollRight && (
+          <div className="absolute right-0 top-0 bottom-0 z-20 flex items-center bg-gradient-to-l from-white via-white/95 to-transparent dark:from-[#111827] dark:via-[#111827]/95 pl-4 pr-1 pointer-events-auto">
+            <button
+              onClick={() => scrollNav("right")}
+              className="h-7 w-7 rounded-full bg-[#5d5fef] text-white shadow-md border border-[#5d5fef] flex items-center justify-center hover:bg-[#4f51e0] cursor-pointer transition-transform active:scale-95 animate-pulse hover:animate-none"
+              title="Keyingi bo'limlar (Imtihonlar, Sozlamalar, Moliya, Hisobotlar)"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        <div
+          ref={navContainerRef}
+          onScroll={checkScroll}
+          onWheel={(e) => {
+            if (e.deltaY !== 0 && navContainerRef.current) {
+              navContainerRef.current.scrollLeft += e.deltaY;
+              checkScroll();
+            }
+          }}
+          className="max-w-[1720px] mx-auto px-2 sm:px-6 overflow-x-auto lg:overflow-visible no-scrollbar py-1.5 scroll-smooth touch-scroll"
+        >
           <nav className="flex items-center gap-1 sm:gap-1.5 w-max min-w-full">
           {navItems.map((item) => {
             const Icon = item.icon;
