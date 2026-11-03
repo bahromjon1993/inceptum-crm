@@ -60,10 +60,10 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f3f6fa] text-slate-800 flex flex-col font-sans select-none">
+    <div className="min-h-screen bg-[#f3f6fa] text-slate-800 flex flex-col font-sans select-none overflow-x-hidden max-w-full">
       {/* 1. TOP NAVBAR in exact SoffCRM design */}
       <header className="w-full border-b border-slate-200/70 bg-white sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-3 sm:px-8 h-14 sm:h-18 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-8 h-14 sm:h-16 flex items-center justify-between">
           {/* Brand Logo matching soffcrm.uz */}
           <div className="flex items-center gap-2 sm:gap-3 cursor-pointer">
             <svg
@@ -107,7 +107,7 @@ export function LoginPage() {
           </div>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             <button
               onClick={() => alert("Qo'llab-quvvatlash xizmati: +998 71 200 45 45")}
               className="h-8 sm:h-10 px-2.5 sm:px-5 bg-white hover:bg-emerald-50/50 border border-[#00a859] text-[#00a859] font-bold text-[11px] sm:text-xs rounded-lg sm:rounded-xl transition-all cursor-pointer flex items-center gap-1 sm:gap-1.5"

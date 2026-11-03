@@ -193,16 +193,16 @@ export function SoffcrmHeader({
   return (
     <header className="sticky top-0 z-40 w-full bg-white dark:bg-[#111827] border-b border-[#e8ecf4] dark:border-slate-800 shadow-xs select-none transition-colors duration-200">
       {/* 1. TOP NAVBAR */}
-      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-[1720px] mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
         {/* Left: SoffCRM + INCEPTUM Logo */}
         <div
           onClick={() => onTabChange("dashboard")}
-          className="flex items-center gap-3 cursor-pointer shrink-0"
+          className="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0"
         >
           {/* Stylized SoffCRM S-Logo */}
           <div className="relative flex items-center">
             <svg
-              className="w-8 h-8 text-[#10b981]"
+              className="w-7 h-7 sm:w-8 sm:h-8 text-[#10b981]"
               viewBox="0 0 36 36"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -221,14 +221,14 @@ export function SoffcrmHeader({
             </svg>
             <div className="ml-2 leading-tight">
               <div className="flex items-center">
-                <span className="text-xl font-black tracking-tight text-[#1e293b]">
+                <span className="text-lg sm:text-xl font-black tracking-tight text-[#1e293b] dark:text-white">
                   Soff<span className="text-[#10b981]">CRM</span>
                 </span>
-                <span className="ml-2 text-base font-bold tracking-wider text-[#64748b]">
+                <span className="hidden sm:inline ml-1.5 sm:ml-2 text-xs sm:text-base font-bold tracking-wider text-[#64748b]">
                   INCEPTUM
                 </span>
               </div>
-              <div className="text-[9px] uppercase tracking-wider font-semibold text-[#94a3b8] -mt-0.5">
+              <div className="hidden sm:block text-[9px] uppercase tracking-wider font-semibold text-[#94a3b8] -mt-0.5">
                 Smart Solutions For Success
               </div>
             </div>
@@ -255,11 +255,11 @@ export function SoffcrmHeader({
         </div>
 
         {/* Right Action Icons & Controls */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Blue TO'LOV button */}
           <button
             onClick={onOpenPaymentModal}
-            className="h-9 sm:h-10 px-3 sm:px-5 bg-[#5d5fef] hover:bg-[#4f51e0] active:scale-[0.98] text-white font-bold text-xs tracking-wider rounded-lg shadow-sm transition-all flex items-center gap-1.5 sm:gap-2 cursor-pointer shrink-0"
+            className="h-8 sm:h-10 px-2.5 sm:px-5 bg-[#5d5fef] hover:bg-[#4f51e0] active:scale-[0.98] text-white font-bold text-[11px] sm:text-xs tracking-wider rounded-lg shadow-sm transition-all flex items-center gap-1 sm:gap-2 cursor-pointer shrink-0"
           >
             <span className="text-sm">💳</span>
             <span>TO'LOV</span>
@@ -302,7 +302,7 @@ export function SoffcrmHeader({
             id="theme-toggle-btn"
             onClick={toggleTheme}
             title={isDarkMode ? "Kunduzgi rejimga o'tish" : "Tungi rejimga o'tish"}
-            className="h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer"
+            className="h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-200 transition-colors cursor-pointer"
           >
             {isDarkMode ? (
               <Sun className="h-4 w-4 text-amber-400 animate-in spin-in-180 duration-300" />
@@ -332,7 +332,7 @@ export function SoffcrmHeader({
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             title="Mobil menyu"
-            className="md:hidden h-9 w-9 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="md:hidden h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -342,7 +342,7 @@ export function SoffcrmHeader({
             <button
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
               title="Bildirishnomalar"
-              className={`h-10 w-10 flex items-center justify-center rounded-lg transition-colors cursor-pointer relative ${
+              className={`h-8 w-8 sm:h-10 sm:w-10 flex items-center justify-center rounded-lg transition-colors cursor-pointer relative ${
                 isNotificationsOpen
                   ? "bg-[#5d5fef]/10 text-[#5d5fef]"
                   : "text-slate-500 hover:text-slate-800 hover:bg-slate-100"
@@ -609,6 +609,36 @@ export function SoffcrmHeader({
             </div>
           </div>
 
+          {/* Mobile Navigation Links */}
+          <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+            <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+              Asosiy bo'limlar
+            </div>
+            <div className="grid grid-cols-2 gap-1.5">
+              {navItems.map((item) => {
+                const Icon = item.icon;
+                const isActive = currentTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      onTabChange(item.id);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-left transition-all ${
+                      isActive
+                        ? "bg-[#5d5fef] text-white shadow-xs"
+                        : "bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100"
+                    }`}
+                  >
+                    <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-slate-500"}`} />
+                    <span className="truncate">{item.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           {/* Quick Mobile Actions */}
           <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
             <button
@@ -638,8 +668,8 @@ export function SoffcrmHeader({
 
       {/* 2. SUB-NAVBAR TABS (Scrollable & Responsive) */}
       <div className="w-full bg-white dark:bg-[#111827] border-t border-slate-100/80 dark:border-slate-800/80">
-        <div className="max-w-[1720px] mx-auto px-2 sm:px-6 flex items-center justify-between overflow-visible py-1.5">
-          <nav className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+        <div className="max-w-[1720px] mx-auto px-2 sm:px-6 overflow-x-auto no-scrollbar py-1.5 scroll-smooth touch-scroll">
+          <nav className="flex items-center gap-1 sm:gap-1.5 w-max min-w-full">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;

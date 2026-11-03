@@ -143,7 +143,7 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f6fc] dark:bg-[#0b0f19] text-slate-800 dark:text-slate-100 flex flex-col font-sans antialiased transition-colors duration-200">
+    <div className="min-h-screen bg-[#f4f6fc] dark:bg-[#0b0f19] text-slate-800 dark:text-slate-100 flex flex-col font-sans antialiased transition-colors duration-200 overflow-x-hidden max-w-full">
       {/* 1:1 SoffCRM Top Navigation Header */}
       <SoffcrmHeader
         currentTab={currentTab}
@@ -157,7 +157,7 @@ function MainApp() {
       />
 
       {/* Main Page Container */}
-      <main className="flex-1 max-w-[1720px] w-full mx-auto px-4 sm:px-6 py-5 animate-in fade-in duration-150">
+      <main className="flex-1 min-w-0 max-w-[1720px] w-full mx-auto px-3 sm:px-6 py-3.5 sm:py-5 animate-in fade-in duration-150 overflow-x-hidden">
         {renderContent()}
       </main>
 

@@ -459,9 +459,9 @@ export function StudentsPage({
         </div>
 
         {/* Action Button Rows matching frame_028 */}
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-start sm:items-end gap-2 w-full sm:w-auto">
           {/* Row 1 */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => alert("Talabalar ro'yxati Excel formatida yuklab olinmoqda...")}
               className="h-8 px-3 bg-white hover:bg-emerald-50 border border-emerald-500 text-emerald-600 font-bold text-xs rounded-lg shadow-2xs flex items-center gap-1.5 cursor-pointer transition-colors"
@@ -500,7 +500,7 @@ export function StudentsPage({
           </div>
 
           {/* Row 2 */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => alert("Excel fayl orqali o'quvchilarni import qilish oynasi")}
               className="h-8 px-3 bg-white hover:bg-indigo-50/50 border border-[#5d5fef]/40 text-[#5d5fef] text-xs font-bold rounded-lg flex items-center gap-1.5 cursor-pointer transition-colors"

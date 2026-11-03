@@ -37,3 +37,4 @@ databases:
     databaseName: inceptum_crm
     user: inceptum_user
     plan: free
+
