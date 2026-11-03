@@ -181,17 +181,7 @@ export function SettingsPage({
   };
 
   // ================= 4. KURSLAR (frame_032) =================
-  const [coursesList, setCoursesList] = useState([
-    { id: 1, name: "CEFR", fee: "350 000 so'm", branch: "INCEPTUM Filliali", dur: "6 oy", sys: "Sozlanmagan" },
-    { id: 2, name: "KIDS 4", fee: "300 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-    { id: 3, name: "KIDS 3", fee: "275 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-    { id: 4, name: "KIDS 2", fee: "250 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-    { id: 5, name: "KIDS 1", fee: "225 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-    { id: 6, name: "IELTS Graduation", fee: "400 000 so'm", branch: "INCEPTUM Filliali", dur: "6 oy", sys: "Sozlanmagan" },
-    { id: 7, name: "Pre-IELTS 2", fee: "350 000 so'm", branch: "INCEPTUM Filliali", dur: "4 oy", sys: "Sozlanmagan" },
-    { id: 8, name: "Pre-IELTS 1", fee: "300 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-    { id: 9, name: "Elementary", fee: "250 000 so'm", branch: "INCEPTUM Filliali", dur: "3 oy", sys: "Sozlanmagan" },
-  ]);
+  const [coursesList, setCoursesList] = useState<any[]>([]);
 
   const [isAddCourseDrawerOpen, setIsAddCourseDrawerOpen] = useState(false);
   const [newCourseName, setNewCourseName] = useState("");
@@ -217,13 +207,7 @@ export function SettingsPage({
   };
 
   // ================= 5. XONALAR (frame_035 & frame_036) =================
-  const [roomsList, setRoomsList] = useState([
-    { id: 1, name: "MARJONA 5-xona", capacity: "20 o'rin", branch: "INCEPTUM Filliali" },
-    { id: 2, name: "AHMADJON 4-xona", capacity: "18 o'rin", branch: "INCEPTUM Filliali" },
-    { id: 3, name: "MUSLIM 3-xona", capacity: "22 o'rin", branch: "INCEPTUM Filliali" },
-    { id: 4, name: "GULASAL 2-xona", capacity: "16 o'rin", branch: "INCEPTUM Filliali" },
-    { id: 5, name: "FERUZ 1-xona", capacity: "25 o'rin", branch: "INCEPTUM Filliali" },
-  ]);
+  const [roomsList, setRoomsList] = useState<any[]>([]);
 
   const [isAddRoomDrawerOpen, setIsAddRoomDrawerOpen] = useState(false);
   const [newRoomName, setNewRoomName] = useState("");
@@ -258,17 +242,7 @@ export function SettingsPage({
 
   // ================= 7. KIRISHLAR SONI / LOGINS (frame_046) =================
   const [loginSearch, setLoginSearch] = useState("");
-  const loginsList = [
-    { id: 1, name: "Abduhalilov Sardorbek", phone: "+998943703101", date: "2026-10-28 17:54" },
-    { id: 2, name: "Marjona teacher", phone: "+998946663537", date: "2026-10-28 16:08" },
-    { id: 3, name: "Imron Erkinov", phone: "+998993240223", date: "2026-10-27 18:21" },
-    { id: 4, name: "Gulasal teacher", phone: "+998940167500", date: "2026-10-27 17:36" },
-    { id: 5, name: "Feruzbek teacher", phone: "+998938141440", date: "2026-10-27 16:39" },
-    { id: 6, name: "Axmadjon teacher", phone: "+998931790214", date: "2026-10-27 16:26" },
-    { id: 7, name: "Sayfiddinova Diora", phone: "+998941731328", date: "2026-10-27 16:08" },
-    { id: 8, name: "Abdurahmananova Maftuna", phone: "+998942663383", date: "2026-10-27 16:05" },
-    { id: 9, name: "Ne'matjanova Dilafruz", phone: "+998775065559", date: "2026-10-27 15:18" },
-  ];
+  const loginsList: any[] = [];
 
   const filteredLogins = loginsList.filter(
     (l) =>
@@ -278,62 +252,10 @@ export function SettingsPage({
   );
 
   // ================= 8. TO'LOV TARIXI LOGLARI (frame_047) =================
-  const paymentHistoryList = [
-    {
-      user: "Abduhalilov Sardorbek",
-      phone: "+998943703101",
-      amount: "300,000 UZS",
-      group: "Feruzbek O 4-6",
-      officer: "Imron Erkinov",
-      date: "2026-10-28 17:54",
-    },
-    {
-      user: "Sayfiddinova Diora",
-      phone: "+998941731328",
-      amount: "300,000 UZS",
-      group: "Ahmadjon E 4-6",
-      officer: "Imron Erkinov",
-      date: "2026-10-27 16:08",
-    },
-    {
-      user: "Abdurahmananova Maftuna",
-      phone: "+998942663383",
-      amount: "250,000 UZS",
-      group: "Feruzbek E 4-6",
-      officer: "Imron Erkinov",
-      date: "2026-10-27 16:05",
-    },
-    {
-      user: "Abdullajanova Ra'no",
-      phone: "+998774212177",
-      amount: "225,000 UZS",
-      group: "Gulasal E 2-4",
-      officer: "Imron Erkinov",
-      date: "2026-10-27 13:54",
-    },
-  ];
+  const paymentHistoryList: any[] = [];
 
   // ================= 9. FORMALAR (frame_049) =================
-  const [formsList, setFormsList] = useState<any[]>([
-    {
-      id: 1,
-      name: "IELTS Intensive Kursiga Ro'yxatdan O'tish",
-      dept: "IELTS Bo'limi",
-      source: "Instagram",
-      leadsCount: 42,
-      link: "https://inceptum.uz/form/ielts-2026",
-      integration: "Telegram Bot",
-    },
-    {
-      id: 2,
-      name: "Kids English Darsiga Ariza",
-      dept: "Bolalar Bo'limi",
-      source: "Telegram",
-      leadsCount: 19,
-      link: "https://inceptum.uz/form/kids-reg",
-      integration: "SMS Gateway",
-    },
-  ]);
+  const [formsList, setFormsList] = useState<any[]>([]);
 
   const [isAddFormModalOpen, setIsAddFormModalOpen] = useState(false);
   const [newFormName, setNewFormName] = useState("");

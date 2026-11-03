@@ -42,7 +42,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "active_leads",
       title: "Faol lidlar",
-      value: "12",
+      value: "0",
       icon: UserCheck,
       iconColor: "text-emerald-500",
       bgColor: "bg-emerald-50",
@@ -51,7 +51,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "groups",
       title: "Guruhlar",
-      value: "18",
+      value: "0",
       icon: Layers,
       iconColor: "text-amber-500",
       bgColor: "bg-amber-50",
@@ -60,7 +60,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "debts",
       title: "Qolgan qarzlar",
-      value: "6 260 565 so'm",
+      value: "0 so'm",
       icon: AlertTriangle,
       iconColor: "text-rose-500",
       bgColor: "bg-rose-50",
@@ -71,7 +71,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "debtors",
       title: "Qarzdorlar",
-      value: "24",
+      value: "0",
       icon: AlertTriangle,
       iconColor: "text-rose-500",
       bgColor: "bg-rose-50",
@@ -80,7 +80,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "upcoming_payments",
       title: "To'lovi yaqin",
-      value: "9",
+      value: "0",
       icon: Clock,
       iconColor: "text-amber-500",
       bgColor: "bg-amber-50",
@@ -89,7 +89,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "active_students",
       title: "Faol talabalar",
-      value: "142",
+      value: "0",
       icon: GraduationCap,
       iconColor: "text-cyan-500",
       bgColor: "bg-cyan-50",
@@ -98,7 +98,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "total_in_groups",
       title: "Jami guruhdagi o'quvchilar",
-      value: "170",
+      value: "0",
       icon: Users,
       iconColor: "text-cyan-500",
       bgColor: "bg-cyan-50",
@@ -107,7 +107,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "trial_lesson",
       title: "Sinov darsida",
-      value: "4",
+      value: "0",
       icon: Calendar,
       iconColor: "text-purple-500",
       bgColor: "bg-purple-50",
@@ -116,7 +116,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "attended_left",
       title: "Kelib ketganlar",
-      value: "8",
+      value: "0",
       icon: ArrowRightLeft,
       iconColor: "text-emerald-500",
       bgColor: "bg-emerald-50",
@@ -126,7 +126,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "teachers",
       title: "O'qituvchilar",
-      value: "4",
+      value: "0",
       icon: Tv,
       iconColor: "text-emerald-500",
       bgColor: "bg-emerald-50",
@@ -135,7 +135,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "exams",
       title: "Imtihonlar",
-      value: "3",
+      value: "0",
       icon: CheckSquare,
       iconColor: "text-amber-500",
       bgColor: "bg-amber-50",
@@ -144,7 +144,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "new_enrollment",
       title: "Yangi guruhga qabul",
-      value: "6",
+      value: "0",
       icon: Users,
       iconColor: "text-purple-500",
       bgColor: "bg-purple-50",
@@ -166,35 +166,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
     {
       id: "feruz_1",
       name: "FERUZ 1-xona",
-      lessons: [
-        {
-          start: "16:00",
-          span: 4, // 2 hours = 4 slots of 30 min
-          title: "16:00 - 18:00 / Feruzbek O 4-6",
-          teacher: "O'qituvchi:Feruzbek teacher",
-          color: "border-l-4 border-l-blue-400 bg-slate-50/90 text-slate-700",
-        },
-      ],
+      lessons: [],
     },
     {
       id: "gulasal_2",
       name: "GULASAL 2-xona",
-      lessons: [
-        {
-          start: "16:00",
-          span: 4,
-          title: "16:00 - 18:00 / Gulasal O 4-6",
-          teacher: "O'qituvchi:Gulasal teacher",
-          color: "border-l-4 border-l-purple-400 bg-slate-50/90 text-slate-700",
-        },
-        {
-          start: "18:00",
-          span: 4,
-          title: "18:00 - 20:00 / Gulasal O 6-8",
-          teacher: "O'qituvchi:Gulasal teacher",
-          color: "border-l-4 border-l-purple-400 bg-slate-50/90 text-slate-700",
-        },
-      ],
+      lessons: [],
     },
     {
       id: "muslim_3",
@@ -322,7 +299,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           onClick={() => onNavigate("reports", "payment")}
           className="w-full sm:w-auto h-9 px-5 bg-[#e11d48] hover:bg-[#be123c] text-white text-xs font-bold uppercase tracking-wider rounded-md shadow-xs transition-colors flex items-center justify-center gap-2 cursor-pointer"
         >
-          MARKAZ FOYDALILIGI 12.21%
+          MARKAZ FOYDALILIGI 0%
         </button>
       </div>
 

@@ -43,60 +43,7 @@ export function MentorsPage() {
   const [showArchive, setShowArchive] = useState(false);
 
   // Exact 1:1 teachers list matching video frame_005
-  const [teachers, setTeachers] = useState<TeacherItem[]>([
-    {
-      id: 1,
-      name: "Gulasal teacher",
-      phone: "+998940167500",
-      baseSalary: "*****",
-      sharePercent: "- %",
-      lessonRate: "- so'm",
-      birthDate: "2026-06-03",
-      hiredDate: "2026-06-01",
-      gender: "Ayol",
-      groupsCount: 4,
-      studentsCount: 29,
-    },
-    {
-      id: 2,
-      name: "Axmadjon teacher",
-      phone: "+998931790214",
-      baseSalary: "*****",
-      sharePercent: "- %",
-      lessonRate: "- so'm",
-      birthDate: "2026-06-03",
-      hiredDate: "2026-06-01",
-      gender: "Erkak",
-      groupsCount: 3,
-      studentsCount: 22,
-    },
-    {
-      id: 3,
-      name: "Marjona teacher",
-      phone: "+998946663537",
-      baseSalary: "*****",
-      sharePercent: "- %",
-      lessonRate: "- so'm",
-      birthDate: "2026-06-03",
-      hiredDate: "2026-06-01",
-      gender: "Ayol",
-      groupsCount: 3,
-      studentsCount: 18,
-    },
-    {
-      id: 4,
-      name: "Feruzbek teacher",
-      phone: "+998938141440",
-      baseSalary: "*****",
-      sharePercent: "- %",
-      lessonRate: "- so'm",
-      birthDate: "1999-11-08",
-      hiredDate: "2026-06-01",
-      gender: "Erkak",
-      groupsCount: 4,
-      studentsCount: 25,
-    },
-  ]);
+  const [teachers, setTeachers] = useState<TeacherItem[]>([]);
 
   // Selected teacher for profile view matching video frame_006
   const [selectedTeacher, setSelectedTeacher] = useState<TeacherItem | null>(null);

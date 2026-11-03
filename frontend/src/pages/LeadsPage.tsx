@@ -16,50 +16,13 @@ export function LeadsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  const [leads, setLeads] = useState<any[]>([
-    {
-      id: 1,
-      name: "Otabek G'aniyev",
-      phone: "+998 90 123 44 55",
-      course: "Pre-IELTS",
-      source: "Telegram",
-      stage: "NEW", // NEW, CONTACTED, TRIAL, ENROLLED
-      date: "2026-10-28",
-    },
-    {
-      id: 2,
-      name: "Ziyoda Raxmatova",
-      phone: "+998 93 999 88 77",
-      course: "Elementary",
-      source: "Instagram",
-      stage: "CONTACTED",
-      date: "2026-10-27",
-    },
-    {
-      id: 3,
-      name: "Rustam Aliyev",
-      phone: "+998 97 555 44 33",
-      course: "IELTS Graduation",
-      source: "Tanishlar",
-      stage: "TRIAL",
-      date: "2026-10-26",
-    },
-    {
-      id: 4,
-      name: "Dildora Qosimova",
-      phone: "+998 94 333 22 11",
-      course: "Kids English",
-      source: "Banner",
-      stage: "ENROLLED",
-      date: "2026-10-25",
-    },
-  ]);
+  const [leads, setLeads] = useState<any[]>([]);
 
   const stages = [
-    { id: "NEW", title: "Yangi lidlar", count: 1, color: "border-t-blue-500" },
-    { id: "CONTACTED", title: "Bog'lanildi", count: 1, color: "border-t-amber-500" },
-    { id: "TRIAL", title: "Sinov darsida", count: 1, color: "border-t-purple-500" },
-    { id: "ENROLLED", title: "Qabul qilindi", count: 1, color: "border-t-emerald-500" },
+    { id: "NEW", title: "Yangi lidlar", count: leads.filter((l: any) => l.stage === "NEW").length, color: "border-t-blue-500" },
+    { id: "CONTACTED", title: "Bog'lanildi", count: leads.filter((l: any) => l.stage === "CONTACTED").length, color: "border-t-amber-500" },
+    { id: "TRIAL", title: "Sinov darsida", count: leads.filter((l: any) => l.stage === "TRIAL").length, color: "border-t-purple-500" },
+    { id: "ENROLLED", title: "Qabul qilindi", count: leads.filter((l: any) => l.stage === "ENROLLED").length, color: "border-t-emerald-500" },
   ];
 
   return (
