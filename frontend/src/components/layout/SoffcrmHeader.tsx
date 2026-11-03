@@ -251,17 +251,14 @@ export function SoffcrmHeader({
                 </linearGradient>
               </defs>
             </svg>
-            <div className="ml-2 leading-tight">
+            <div className="ml-2">
               <div className="flex items-center">
                 <span className="text-lg sm:text-xl font-black tracking-tight text-[#1e293b] dark:text-white">
-                  Soff<span className="text-[#10b981]">CRM</span>
+                  IT Pixel <span className="text-[#10b981]">CRM</span>
                 </span>
                 <span className="hidden sm:inline ml-1.5 sm:ml-2 text-xs sm:text-base font-bold tracking-wider text-[#64748b]">
                   INCEPTUM
                 </span>
-              </div>
-              <div className="hidden sm:block text-[9px] uppercase tracking-wider font-semibold text-[#94a3b8] -mt-0.5">
-                Smart Solutions For Success
               </div>
             </div>
           </div>

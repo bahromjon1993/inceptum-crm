@@ -483,7 +483,7 @@ export function SettingsPage({
               <div className="max-w-md mx-auto bg-white border border-slate-200 rounded-xl p-8 shadow-sm font-sans space-y-4 text-xs">
                 {receiptFields.logo && logoPosition === "YUQORIDA" && (
                   <div className="text-center font-black text-lg text-slate-900 tracking-wider">
-                    Soff<span className="text-[#10b981]">CRM</span> INCEPTUM
+                    IT Pixel <span className="text-[#10b981]">CRM</span> INCEPTUM
                   </div>
                 )}
 

@@ -94,14 +94,11 @@ export function LoginPage() {
             <div className="leading-tight">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg sm:text-2xl font-black tracking-tight text-slate-900">
-                  Soff<span className="text-[#00a859]">CRM</span>
+                  IT Pixel <span className="text-[#00a859]">CRM</span>
                 </span>
                 <span className="text-[10px] sm:text-xs font-black tracking-wider text-white bg-[#00a859] px-1.5 sm:px-2 py-0.5 rounded-md">
                   INCEPTUM
                 </span>
-              </div>
-              <div className="hidden sm:block text-[10px] tracking-wider text-slate-400">
-                Smart Solutions For Success
               </div>
             </div>
           </div>
@@ -142,7 +139,7 @@ export function LoginPage() {
 
               {/* Headline */}
               <h2 className="text-xl sm:text-3xl font-extrabold tracking-tight leading-snug">
-                Soff CRM ga kirish va markazni boshqarish
+                IT Pixel CRM ga kirish va markazni boshqarish
               </h2>
 
               {/* Value Propositions with Checkmarks */}
@@ -360,7 +357,7 @@ export function LoginPage() {
 
       {/* 3. FOOTER */}
       <footer className="border-t border-slate-200/60 bg-white py-6 text-center text-xs text-slate-400">
-        © 2026 SoffCRM & INCEPTUM Smart Solutions. Barcha huquqlar himoyalangan.
+        © 2026 IT Pixel CRM & INCEPTUM. Barcha huquqlar himoyalangan.
       </footer>
     </div>
   );
