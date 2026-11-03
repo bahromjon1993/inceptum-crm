@@ -615,7 +615,17 @@ export function SoffcrmHeader({
               Asosiy bo'limlar
             </div>
             <div className="grid grid-cols-2 gap-1.5">
-              {navItems.map((item) => {
+              {[
+                { id: "dashboard", label: "Boshqaruv", icon: Home },
+                { id: "leads", label: "Lidlar", icon: FileText },
+                { id: "mentors", label: "O'qituvchilar", icon: UserCheck },
+                { id: "groups", label: "Guruhlar", icon: Layers },
+                { id: "students", label: "O'quvchilar", icon: GraduationCap },
+                { id: "exams", label: "Imtihonlar", icon: CheckSquare },
+                { id: "finance", label: "Moliya", icon: TrendingUp },
+                { id: "settings", label: "Sozlamalar", icon: Settings },
+                { id: "reports", label: "Hisobotlar", icon: ClipboardList },
+              ].map((item) => {
                 const Icon = item.icon;
                 const isActive = currentTab === item.id;
                 return (
@@ -668,7 +678,7 @@ export function SoffcrmHeader({
 
       {/* 2. SUB-NAVBAR TABS (Scrollable & Responsive) */}
       <div className="w-full bg-white dark:bg-[#111827] border-t border-slate-100/80 dark:border-slate-800/80">
-        <div className="max-w-[1720px] mx-auto px-2 sm:px-6 overflow-x-auto no-scrollbar py-1.5 scroll-smooth touch-scroll">
+        <div className="max-w-[1720px] mx-auto px-2 sm:px-6 overflow-x-auto lg:overflow-visible no-scrollbar py-1.5 scroll-smooth touch-scroll">
           <nav className="flex items-center gap-1 sm:gap-1.5 w-max min-w-full">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -701,6 +711,7 @@ export function SoffcrmHeader({
           >
             <button
               onClick={() => {
+                onTabChange("settings");
                 setIsSettingsOpen((prev) => !prev);
                 setIsReportsOpen(false);
               }}
@@ -1052,6 +1063,7 @@ export function SoffcrmHeader({
           >
             <button
               onClick={() => {
+                onTabChange("reports");
                 setIsReportsOpen((prev) => !prev);
                 setIsSettingsOpen(false);
               }}
