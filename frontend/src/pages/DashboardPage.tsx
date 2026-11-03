@@ -162,70 +162,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
   ];
 
   // Rooms list
-  const rooms = [
-    {
-      id: "feruz_1",
-      name: "FERUZ 1-xona",
-      lessons: [],
-    },
-    {
-      id: "gulasal_2",
-      name: "GULASAL 2-xona",
-      lessons: [],
-    },
-    {
-      id: "muslim_3",
-      name: "MUSLIM 3-xona",
-      lessons: [],
-    },
-    {
-      id: "ahmadjon_4",
-      name: "AHMADJON 4-xona",
-      lessons: [
-        {
-          start: "16:00",
-          span: 4,
-          title: "16:00 - 18:00 / Ahmadjon O 4-6",
-          teacher: "O'qituvchi:Axmadjon teacher",
-          color: "border-l-4 border-l-emerald-400 bg-slate-50/90 text-slate-700",
-        },
-        {
-          start: "18:00",
-          span: 4,
-          title: "18:00 - 20:00 / Ahmadjon O 6-8",
-          teacher: "O'qituvchi:Axmadjon teacher",
-          color: "border-l-4 border-l-emerald-400 bg-slate-50/90 text-slate-700",
-        },
-      ],
-    },
-    {
-      id: "marjona_5",
-      name: "MARJONA 5-xona",
-      lessons: [
-        {
-          start: "08:00",
-          span: 4,
-          title: "08:00 - 10:00 / Marjona O 8-10",
-          teacher: "O'qituvchi:Marjona teacher",
-          color: "border-l-4 border-l-amber-400 bg-slate-50/90 text-slate-700",
-        },
-        {
-          start: "14:00",
-          span: 4,
-          title: "14:00 - 16:00 / Marjona O 2-4",
-          teacher: "O'qituvchi:Marjona teacher",
-          color: "border-l-4 border-l-amber-400 bg-slate-50/90 text-slate-700",
-        },
-        {
-          start: "16:00",
-          span: 4,
-          title: "16:00 - 18:00 / Marjona O 4-6",
-          teacher: "O'qituvchi:Marjona teacher",
-          color: "border-l-4 border-l-amber-400 bg-slate-50/90 text-slate-700",
-        },
-      ],
-    },
-  ];
+  const rooms: any[] = [];
 
   return (
     <div className="space-y-6 pb-12 select-none">
@@ -357,7 +294,17 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               </tr>
             </thead>
             <tbody>
-              {rooms.map((room) => {
+              {rooms.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={timeSlots.length + 1}
+                    className="py-12 text-center text-slate-400 font-medium"
+                  >
+                    Hozircha dars jadvali va xonalar mavjud emas
+                  </td>
+                </tr>
+              ) : (
+                rooms.map((room) => {
                 return (
                   <tr
                     key={room.id}
@@ -370,7 +317,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
 
                     {/* Timeline slots */}
                     {timeSlots.map((time, idx) => {
-                      const lesson = room.lessons.find((l) => l.start === time);
+                      const lesson = room.lessons.find((l: any) => l.start === time);
 
                       if (lesson) {
                         return (
@@ -395,7 +342,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
                       }
 
                       // Check if current slot is covered by a spanning previous lesson
-                      const isCovered = room.lessons.some((l) => {
+                      const isCovered = room.lessons.some((l: any) => {
                         const startIdx = timeSlots.indexOf(l.start);
                         const currentIdx = idx;
                         return currentIdx > startIdx && currentIdx < startIdx + l.span;
@@ -414,7 +361,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
                     })}
                   </tr>
                 );
-              })}
+              }))}
             </tbody>
           </table>
         </div>

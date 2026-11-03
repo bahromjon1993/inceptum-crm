@@ -75,15 +75,7 @@ export function StudentsPage({
     "Kids English",
   ];
 
-  const schoolsList = [
-    "Barchasi",
-    "1-maktab",
-    "2-maktab",
-    "21-maktab",
-    "Prezident maktabi",
-    "Al-Xorazmiy nomidagi IT maktabi",
-    "35-maktab",
-  ];
+  const schoolsList = ["Barchasi"];
 
   const groupStatusesList = [
     "Faol",

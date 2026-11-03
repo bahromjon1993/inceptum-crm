@@ -90,13 +90,13 @@ export function ExamsPage() {
     try {
       const res = await apiClient.get("/exams/");
       const data = res.data.results || res.data;
-      if (Array.isArray(data) && data.length > 0) {
+      if (Array.isArray(data)) {
         setExams(data);
       } else {
-        loadFallbackExams();
+        setExams([]);
       }
     } catch {
-      loadFallbackExams();
+      setExams([]);
     } finally {
       setIsLoading(false);
     }

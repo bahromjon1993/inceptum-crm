@@ -110,15 +110,7 @@ export function SettingsPage({
   const [newStaffRole, setNewStaffRole] = useState("teacher");
   const [newStaffSalary, setNewStaffSalary] = useState("3 000 000 so'm");
 
-  const [staffList, setStaffList] = useState([
-    { id: 1, name: "Adminoy Adminovna", phone: "+998999999999", salary: "*****", share: "- %", role: "admin, casher", hired: "2026-06-01" },
-    { id: 2, name: "Axmadjon teacher", phone: "+998931790214", salary: "*****", share: "- %", role: "teacher", hired: "2026-06-01" },
-    { id: 3, name: "Feruzbek teacher", phone: "+998938141440", salary: "*****", share: "- %", role: "teacher", hired: "2026-06-01" },
-    { id: 4, name: "Gulasal teacher", phone: "+998940167500", salary: "*****", share: "- %", role: "teacher", hired: "2026-06-01" },
-    { id: 5, name: "Imron Erkinov", phone: "+998993240223", salary: "*****", share: "- %", role: "admin, ceo, casher", hired: "2026-06-03" },
-    { id: 6, name: "MUSLIMBEK O'RMANOV", phone: "+998200076100", salary: "*****", share: "- %", role: "ceo", hired: "2026-06-06" },
-    { id: 7, name: "Marjona teacher", phone: "+998946663537", salary: "*****", share: "- %", role: "teacher", hired: "2026-06-01" },
-  ]);
+  const [staffList, setStaffList] = useState<any[]>([]);
 
   const handleSaveStaff = (e: React.FormEvent) => {
     e.preventDefault();
@@ -282,23 +274,10 @@ export function SettingsPage({
   };
 
   // ================= 10. MAKTABLAR =================
-  const [schoolsList, setSchoolsList] = useState([
-    { id: 1, name: "1-maktab", address: "Toshkent sh., Yunusobod", students: 34 },
-    { id: 2, name: "2-maktab", address: "Toshkent sh., Chilonzor", students: 28 },
-    { id: 3, name: "21-maktab", address: "Toshkent sh., Mirzo Ulug'bek", students: 45 },
-    { id: 4, name: "Prezident maktabi", address: "Toshkent sh., Shayxontohur", students: 52 },
-    { id: 5, name: "Al-Xorazmiy IT maktabi", address: "Toshkent sh., Yashnobod", students: 60 },
-  ]);
+  const [schoolsList, setSchoolsList] = useState<any[]>([]);
 
   // ================= 11. DAM OLISH KUNLARI =================
-  const [holidaysList, setHolidaysList] = useState([
-    { id: 1, name: "Yangi Yil bayrami", date: "2026-01-01 / 2026-01-02", status: "O'tgan" },
-    { id: 2, name: "Xalqaro Xotin-qizlar kuni", date: "2026-03-08", status: "O'tgan" },
-    { id: 3, name: "Navro'z umumxalq bayrami", date: "2026-03-21", status: "O'tgan" },
-    { id: 4, name: "Mustaqillik kuni", date: "2026-09-01", status: "O'tgan" },
-    { id: 5, name: "O'qituvchi va murabbiylar kuni", date: "2026-10-01", status: "O'tgan" },
-    { id: 6, name: "Konstitutsiya kuni", date: "2026-12-08", status: "Kutilmoqda" },
-  ]);
+  const [holidaysList, setHolidaysList] = useState<any[]>([]);
 
   // ================= 12. SMS SHABLONLARI (1:1 with t_0057.jpg / sms_003.jpg) =================
   const [smsCategories, setSmsCategories] = useState<string[]>([]);
@@ -647,7 +626,14 @@ export function SettingsPage({
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {filteredStaff.map((m) => (
+                {filteredStaff.length === 0 ? (
+                  <tr>
+                    <td colSpan={8} className="py-12 text-center text-slate-400 font-medium">
+                      Hozircha xodimlar mavjud emas
+                    </td>
+                  </tr>
+                ) : (
+                  filteredStaff.map((m) => (
                   <tr key={m.id} className="hover:bg-slate-50/60">
                     <td className="py-3 px-3 text-slate-400">{m.id}.</td>
                     <td className="py-3 px-4 font-semibold text-slate-800 flex items-center gap-2">
@@ -678,7 +664,7 @@ export function SettingsPage({
                       </button>
                     </td>
                   </tr>
-                ))}
+                )))}
               </tbody>
             </table>
           </div>
@@ -1349,33 +1335,12 @@ export function SettingsPage({
                   <th className="py-3 px-4">Vaqti</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                {[
-                  { id: 1, caller: "Imron Erkinov", callee: "+998943703101 (Abduhalilov S.)", duration: "02:45 min", status: "Javob berildi", time: "2026-10-28 16:40" },
-                  { id: 2, caller: "Imron Erkinov", callee: "+998993240223 (Sobirov O.)", duration: "01:12 min", status: "Javob berildi", time: "2026-10-28 15:20" },
-                  { id: 3, caller: "Madina Karimova", callee: "+998901234567 (Karimova R.)", duration: "00:00 min", status: "Javobsiz", time: "2026-10-28 14:10" },
-                  { id: 4, caller: "Feruzbek teacher", callee: "+998937654321 (Toshmatov B.)", duration: "03:10 min", status: "Javob berildi", time: "2026-10-28 11:30" },
-                ].map((c) => (
-                  <tr key={c.id} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                    <td className="py-3 px-4 text-slate-400">{c.id}</td>
-                    <td className="py-3 px-4 font-semibold text-slate-800 dark:text-slate-100 flex items-center gap-2">
-                      <PhoneCall className="w-3.5 h-3.5 text-[#5d5fef]" />
-                      <span>{c.caller}</span>
-                    </td>
-                    <td className="py-3 px-4 font-mono text-slate-600 dark:text-slate-300">{c.callee}</td>
-                    <td className="py-3 px-4 font-mono text-slate-500">{c.duration}</td>
-                    <td className="py-3 px-4">
-                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                        c.status === "Javob berildi"
-                          ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40"
-                          : "bg-rose-50 text-rose-600 dark:bg-rose-950/40"
-                      }`}>
-                        {c.status}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-mono text-slate-400">{c.time}</td>
-                  </tr>
-                ))}
+<tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+                <tr>
+                  <td colSpan={6} className="py-12 text-center text-slate-400 font-medium">
+                    Hozircha qo'ng'iroqlar tarixi mavjud emas
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1419,31 +1384,12 @@ export function SettingsPage({
                   <th className="py-3 px-4">Vaqti</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                {[
-                  { id: 1, user: "Abduhalilov Sardorbek", tgId: "598214710", type: "To'lov cheki", text: "To'lovingiz qabul qilindi: 300 000 UZS", status: "Yetkazildi", time: "2026-10-28 17:55" },
-                  { id: 2, user: "Sayfiddinova Diora", tgId: "482910382", type: "Dars eslatmasi", text: "Ertaga 09:00 da IELTS darsi", status: "Yetkazildi", time: "2026-10-28 18:00" },
-                  { id: 3, user: "Yusufjanov Javohir", tgId: "394817293", type: "Davomat xabari", text: "Darsga keldingiz (+10 coin)", status: "Yetkazildi", time: "2026-10-28 16:30" },
-                  { id: 4, user: "Rustamov Firdavs", tgId: "610293847", type: "Lid tasdiqlash", text: "Arizangiz qabul qilindi, tez orada bog'lanamiz", status: "Yetkazildi", time: "2026-10-28 14:15" },
-                ].map((b) => (
-                  <tr key={b.id} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                    <td className="py-3 px-4 text-slate-400">{b.id}</td>
-                    <td className="py-3 px-4 font-bold text-slate-800 dark:text-slate-100">{b.user}</td>
-                    <td className="py-3 px-4 font-mono text-slate-500">{b.tgId}</td>
-                    <td className="py-3 px-4">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#5d5fef]/10 text-[#5d5fef]">
-                        {b.type}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 text-slate-600 dark:text-slate-300 max-w-xs truncate">{b.text}</td>
-                    <td className="py-3 px-4">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-600">
-                        {b.status}
-                      </span>
-                    </td>
-                    <td className="py-3 px-4 font-mono text-slate-400">{b.time}</td>
-                  </tr>
-                ))}
+<tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+                <tr>
+                  <td colSpan={7} className="py-12 text-center text-slate-400 font-medium">
+                    Hozircha bot xabarnomalari mavjud emas
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1672,7 +1618,14 @@ export function SettingsPage({
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {schoolsList.map((sc) => (
+                {schoolsList.length === 0 ? (
+                  <tr>
+                    <td colSpan={5} className="py-12 text-center text-slate-400 font-medium">
+                      Hozircha maktablar qo'shilmagan
+                    </td>
+                  </tr>
+                ) : (
+                  schoolsList.map((sc) => (
                   <tr key={sc.id} className="hover:bg-slate-50/60">
                     <td className="py-3 px-4 text-slate-400">{sc.id}.</td>
                     <td className="py-3 px-4 font-semibold text-slate-800">{sc.name}</td>
@@ -1687,7 +1640,7 @@ export function SettingsPage({
                       </button>
                     </td>
                   </tr>
-                ))}
+                )))}
               </tbody>
             </table>
           </div>

@@ -64,73 +64,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
   // ================= 5. HODIMLAR DAVOMATI (frame_062) =================
   const [attendanceViewType, setAttendanceViewType] = useState<"daily" | "weekly" | "monthly">("daily");
 
-  const attendanceList = [
-    {
-      id: 1,
-      name: "Adminoy Adminovna",
-      branch: "INCEPTUM Filliali",
-      expectedIn: "08:00",
-      actualIn: "—",
-      expectedOut: "20:00",
-      actualOut: "—",
-      late: "—",
-      earlyLeave: "—",
-      worked: "—",
-      status: "Kelmedi",
-    },
-    {
-      id: 2,
-      name: "Axmadjon teacher",
-      branch: "INCEPTUM Filliali",
-      expectedIn: "16:00",
-      actualIn: "—",
-      expectedOut: "20:00",
-      actualOut: "—",
-      late: "—",
-      earlyLeave: "—",
-      worked: "—",
-      status: "Kelmedi",
-    },
-    {
-      id: 3,
-      name: "Feruzbek teacher",
-      branch: "INCEPTUM Filliali",
-      expectedIn: "16:00",
-      actualIn: "—",
-      expectedOut: "18:00",
-      actualOut: "—",
-      late: "—",
-      earlyLeave: "—",
-      worked: "—",
-      status: "Kelmedi",
-    },
-    {
-      id: 4,
-      name: "Gulasal teacher",
-      branch: "INCEPTUM Filliali",
-      expectedIn: "14:00",
-      actualIn: "—",
-      expectedOut: "18:00",
-      actualOut: "—",
-      late: "—",
-      earlyLeave: "—",
-      worked: "—",
-      status: "Kelmedi",
-    },
-    {
-      id: 5,
-      name: "Marjona teacher",
-      branch: "INCEPTUM Filliali",
-      expectedIn: "09:00",
-      actualIn: "—",
-      expectedOut: "13:00",
-      actualOut: "—",
-      late: "—",
-      earlyLeave: "—",
-      worked: "—",
-      status: "Kelmedi",
-    },
-  ];
+  const attendanceList: any[] = [];
 
   // ================= COINLAR SUBTABS =================
   const [coinsSubTab, setCoinsSubTab] = useState<"REYTING" | "MARKETPLACE" | "REQUESTS">("REYTING");
@@ -707,7 +641,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <Info className="w-3.5 h-3.5" />
               </div>
               <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
-                15%
+                0%
               </div>
             </div>
 
@@ -717,7 +651,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <Info className="w-3.5 h-3.5" />
               </div>
               <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
-                30
+                0
               </div>
             </div>
 
@@ -727,7 +661,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <Info className="w-3.5 h-3.5" />
               </div>
               <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
-                8 925 000.00
+                0.00
               </div>
             </div>
 
@@ -737,7 +671,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <Info className="w-3.5 h-3.5" />
               </div>
               <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
-                2.3 oy
+                0 oy
               </div>
             </div>
           </div>
@@ -801,7 +735,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   </h3>
                   <p className="text-xs text-slate-400 mt-0.5">Nima uchun talabalar ketmoqda?</p>
                 </div>
-                <span className="text-xs font-bold text-slate-500">Jami: 30</span>
+                <span className="text-xs font-bold text-slate-500">Jami: 0</span>
               </div>
 
               {/* Horizontal Bar Chart */}
@@ -809,8 +743,8 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-bold text-slate-500 uppercase">QARZI BORLAR</div>
                   <div className="w-full h-8 bg-slate-100 dark:bg-slate-800 rounded-md overflow-hidden flex items-center">
-                    <div className="w-[8%] h-full bg-slate-400 flex items-center px-2 text-[10px] text-white font-bold">
-                      1
+                    <div className="w-0 h-full bg-slate-400 flex items-center px-2 text-[10px] text-white font-bold">
+                      0
                     </div>
                   </div>
                 </div>
@@ -818,8 +752,8 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-bold text-slate-500 uppercase">BONUS</div>
                   <div className="w-full h-8 bg-slate-100 dark:bg-slate-800 rounded-md overflow-hidden flex items-center">
-                    <div className="w-[8%] h-full bg-[#ec4899] flex items-center px-2 text-[10px] text-white font-bold">
-                      1
+                    <div className="w-0 h-full bg-[#ec4899] flex items-center px-2 text-[10px] text-white font-bold">
+                      0
                     </div>
                   </div>
                 </div>
@@ -827,9 +761,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-bold text-slate-500 uppercase">QORA RO'YXAT</div>
                   <div className="w-full h-8 bg-slate-100 dark:bg-slate-800 rounded-md overflow-hidden flex items-center">
-                    <div className="w-[85%] h-full bg-[#f97316] flex items-center px-4 text-xs text-white font-bold justify-between">
-                      <span>28</span>
-                      <span>93.3%</span>
+                    <div className="w-0 h-full bg-[#f97316] flex items-center px-4 text-xs text-white font-bold justify-between">
+                      <span>0</span>
+                      <span>0%</span>
                     </div>
                   </div>
                 </div>
@@ -965,13 +899,13 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               </h3>
               <div className="flex items-center gap-2">
                 <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                  191 TALABA
+                  0 TALABA
                 </span>
                 <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-700">
-                  ✓ 10 NATIJA
+                  ✓ 0 NATIJA
                 </span>
                 <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-700">
-                  ⚡ 1.6% MUVAFFAQIYAT
+                  ⚡ 0% MUVAFFAQIYAT
                 </span>
               </div>
             </div>
@@ -988,72 +922,12 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                     <th className="py-3 px-4">NATIJALAR</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                  {[
-                    {
-                      id: 1,
-                      name: "Ne'matjanova Dilafruz",
-                      group: "Feruzbek O 4-6",
-                      branch: "INCEPTUM FILLIALI",
-                      teacher: "Feruzbek teacher",
-                      date: "27-10-2026",
-                      result: "IELTS 6.5 (CEFR B2)",
-                    },
-                    {
-                      id: 2,
-                      name: "Yaxyojonova Imona",
-                      group: "Feruzbek E 6-8",
-                      branch: "INCEPTUM FILLIALI",
-                      teacher: "Feruzbek teacher",
-                      date: "23-10-2026",
-                      result: "IELTS 7.0 (CEFR C1)",
-                    },
-                    {
-                      id: 3,
-                      name: "Sayfiddinova Diora",
-                      group: "Ahmadjon E 4-6",
-                      branch: "INCEPTUM FILLIALI",
-                      teacher: "Axmadjon teacher",
-                      date: "20-10-2026",
-                      result: "IELTS 7.5 (CEFR C1)",
-                    },
-                    {
-                      id: 4,
-                      name: "Qodirjanov Boburbek",
-                      group: "Feruzbek E 6-8",
-                      branch: "INCEPTUM FILLIALI",
-                      teacher: "Feruzbek teacher",
-                      date: "15-10-2026",
-                      result: "IELTS 6.0",
-                    },
-                  ].map((row) => (
-                    <tr
-                      key={row.id}
-                      className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
-                    >
-                      <td className="py-3.5 px-3 text-slate-400">{row.id}</td>
-                      <td className="py-3.5 px-4 font-bold text-slate-800 dark:text-slate-100">
-                        {row.name}
-                      </td>
-                      <td className="py-3.5 px-4">
-                        <div className="font-medium text-slate-800 dark:text-slate-200">
-                          {row.group}
-                        </div>
-                        <div className="text-[10px] text-slate-400">{row.branch}</div>
-                      </td>
-                      <td className="py-3.5 px-4 text-slate-600 dark:text-slate-300">
-                        {row.teacher}
-                      </td>
-                      <td className="py-3.5 px-4 text-slate-500 font-mono text-[11px]">
-                        {row.date}
-                      </td>
-                      <td className="py-3.5 px-4">
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700">
-                          {row.result}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+<tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+                  <tr>
+                    <td colSpan={6} className="py-12 text-center text-slate-400 font-medium">
+                      Hozircha bitiruvchilar mavjud emas
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -1097,7 +971,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <Users className="w-4 h-4 text-slate-400" />
               </div>
               <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
-                7
+                0
               </div>
               <div className="text-xs text-slate-400">Faol xodimlar soni</div>
             </div>
@@ -1125,8 +999,8 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <span>Bugun kelmaganlar(2026-10-28)</span>
                 <AlertCircle className="w-4 h-4 text-rose-500" />
               </div>
-              <div className="text-3xl font-black text-rose-600">7</div>
-              <div className="text-xs text-slate-400">100% yo'qlik</div>
+              <div className="text-3xl font-black text-rose-600">0</div>
+              <div className="text-xs text-slate-400">0% yo'qlik</div>
             </div>
           </div>
 
@@ -1189,7 +1063,14 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                  {attendanceList.map((row) => (
+                  {attendanceList.length === 0 ? (
+                    <tr>
+                      <td colSpan={10} className="py-10 text-center text-slate-400 font-medium text-xs">
+                        Hozircha davomat ma'lumotlari mavjud emas
+                      </td>
+                    </tr>
+                  ) : (
+                    attendanceList.map((row) => (
                     <tr
                       key={row.id}
                       className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
@@ -1218,7 +1099,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                         </span>
                       </td>
                     </tr>
-                  ))}
+                  )))}
                 </tbody>
               </table>
             </div>
@@ -1266,7 +1147,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
-                12.21%
+                0%
               </div>
               <div className="text-xs text-slate-500 font-medium">Markaz foydaliligi</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1274,7 +1155,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
 
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
-                1032 soat
+                0 soat
               </div>
               <div className="text-xs text-slate-500 font-medium">Bo'sh vaqtlar</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1282,7 +1163,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
 
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
-                170
+                0
               </div>
               <div className="text-xs text-slate-500 font-medium">Amaldagi o'quvchilar</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1290,7 +1171,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
 
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-lg font-black text-slate-900 dark:text-slate-100">
-                49 950 000 UZS
+                0 UZS
               </div>
               <div className="text-xs text-slate-500 font-medium">Potensial qo'shimcha</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1298,7 +1179,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
 
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
-                242
+                0
               </div>
               <div className="text-xs text-slate-500 font-medium">Bo'sh o'rinlar</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1306,7 +1187,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
 
             <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-4 shadow-2xs space-y-1">
               <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
-                19 747
+                0
               </div>
               <div className="text-xs text-slate-500 font-medium">Yana o'qishi mumkin</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1">To'liqroq ma'lumot</div>
@@ -1333,74 +1214,10 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-medium">
-                  {/* Feruz 1-xona */}
-                  <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                    <td className="py-3.5 px-3 font-bold text-slate-800 dark:text-slate-100" rowSpan={3}>
-                      FERUZ 1-xona
+                  <tr>
+                    <td colSpan={11} className="py-12 text-center text-slate-400 font-medium">
+                      Hozircha xonalar va statistika ma'lumotlari mavjud emas
                     </td>
-                    <td className="py-3.5 px-3" rowSpan={3}>24</td>
-                    <td className="py-3.5 px-3 font-mono" rowSpan={3}>288.00</td>
-                    <td className="py-3.5 px-3 font-semibold text-slate-800 dark:text-slate-100">
-                      Feruzbek E 4-6
-                    </td>
-                    <td className="py-3.5 px-3 text-center font-bold text-amber-600 bg-amber-50/50 dark:bg-amber-950/20">
-                      15
-                    </td>
-                    <td className="py-3.5 px-3 text-center">9</td>
-                    <td className="py-3.5 px-3 text-center font-mono">24.00</td>
-                    <td className="py-3.5 px-3 font-mono">250 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono font-bold">3 750 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono">216.00</td>
-                    <td className="py-3.5 px-3 font-mono">360</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                    <td className="py-3.5 px-3 font-semibold text-slate-800 dark:text-slate-100">
-                      Feruzbek E 6-8
-                    </td>
-                    <td className="py-3.5 px-3 text-center font-bold text-amber-600 bg-amber-50/50 dark:bg-amber-950/20">
-                      11
-                    </td>
-                    <td className="py-3.5 px-3 text-center">13</td>
-                    <td className="py-3.5 px-3 text-center font-mono">24.00</td>
-                    <td className="py-3.5 px-3 font-mono">300 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono font-bold">3 300 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono">—</td>
-                    <td className="py-3.5 px-3 font-mono">264</td>
-                  </tr>
-                  <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                    <td className="py-3.5 px-3 font-semibold text-slate-800 dark:text-slate-100">
-                      Feruzbek O 4-6
-                    </td>
-                    <td className="py-3.5 px-3 text-center font-bold text-amber-600 bg-amber-50/50 dark:bg-amber-950/20">
-                      18
-                    </td>
-                    <td className="py-3.5 px-3 text-center">6</td>
-                    <td className="py-3.5 px-3 text-center font-mono">24.00</td>
-                    <td className="py-3.5 px-3 font-mono">300 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono font-bold">5 400 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono">—</td>
-                    <td className="py-3.5 px-3 font-mono">432</td>
-                  </tr>
-
-                  {/* Gulasal 2-xona */}
-                  <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 border-t-2 border-slate-200 dark:border-slate-700">
-                    <td className="py-3.5 px-3 font-bold text-slate-800 dark:text-slate-100">
-                      GULASAL 2-xona
-                    </td>
-                    <td className="py-3.5 px-3">20</td>
-                    <td className="py-3.5 px-3 font-mono">288.00</td>
-                    <td className="py-3.5 px-3 font-semibold text-slate-800 dark:text-slate-100">
-                      Gulasal E 2-4
-                    </td>
-                    <td className="py-3.5 px-3 text-center font-bold text-amber-600 bg-amber-50/50 dark:bg-amber-950/20">
-                      10
-                    </td>
-                    <td className="py-3.5 px-3 text-center">10</td>
-                    <td className="py-3.5 px-3 text-center font-mono">24.00</td>
-                    <td className="py-3.5 px-3 font-mono">350 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono font-bold">3 500 000 UZS</td>
-                    <td className="py-3.5 px-3 font-mono">192.00</td>
-                    <td className="py-3.5 px-3 font-mono">240</td>
                   </tr>
                 </tbody>
               </table>
@@ -1513,52 +1330,21 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                     <th className="py-3 px-4">DARAJASI</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                  {[
-                    { id: 1, name: "Abduhalilov Sardorbek", group: "Feruzbek O 4-6", coins: 850, level: "Gold" },
-                    { id: 2, name: "Sayfiddinova Diora", group: "Ahmadjon E 4-6", coins: 720, level: "Silver" },
-                    { id: 3, name: "Yusufjanov Javohir", group: "Ahmadjon E 4-6", coins: 640, level: "Silver" },
-                    { id: 4, name: "Abdurashidov Shoxrux", group: "Ahmadjon E 4-6", coins: 510, level: "Bronze" },
-                  ].map((row) => (
-                    <tr key={row.id} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                      <td className="py-3 px-4 text-slate-400">{row.id}</td>
-                      <td className="py-3 px-4 font-bold text-slate-800 dark:text-slate-100">{row.name}</td>
-                      <td className="py-3 px-4 text-slate-600 dark:text-slate-300">{row.group}</td>
-                      <td className="py-3 px-4 font-black text-amber-500 font-mono">+{row.coins} coin</td>
-                      <td className="py-3 px-4">
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700">
-                          {row.level}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+<tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+                  <tr>
+                    <td colSpan={5} className="py-12 text-center text-slate-400 font-medium">
+                      Hozircha reyting ma'lumotlari mavjud emas
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           )}
 
           {coinsSubTab === "MARKETPLACE" && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { title: "Kitob: English Grammar in Use", cost: 150, left: 12, cat: "Kitoblar" },
-                { title: "Inceptum Brend Bloknot & Ruchka", cost: 80, left: 25, cat: "Merch" },
-                { title: "Inceptum Hoodie (Svitshot)", cost: 450, left: 5, cat: "Kiyim" },
-                { title: "Bepul 1 haftalik speaking klub", cost: 200, left: 50, cat: "Kupon" },
-              ].map((p, i) => (
-                <div key={i} className="bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-slate-700 rounded-2xl p-4 space-y-3">
-                  <div className="h-32 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center text-4xl">
-                    🎁
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold px-2 py-0.5 bg-slate-100 rounded text-slate-600">{p.cat}</span>
-                    <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm mt-1">{p.title}</h4>
-                  </div>
-                  <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
-                    <span className="font-black text-amber-500 text-base">{p.cost} coin</span>
-                    <span className="text-[11px] text-slate-400">{p.left} ta qoldi</span>
-                  </div>
-                </div>
-              ))}
+            <div className="bg-white dark:bg-[#1e293b] border border-[#e8ecf4] dark:border-slate-800 rounded-2xl p-8 text-center text-slate-400">
+              <Gift className="w-10 h-10 mx-auto text-slate-300 mb-2" />
+              <div className="text-sm font-semibold">Hozircha marketplace mahsulotlari mavjud emas</div>
             </div>
           )}
 
@@ -1635,10 +1421,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <Users className="w-4 h-4 text-slate-400" />
                 <span className="text-[11px] font-bold text-rose-500 bg-rose-50 dark:bg-rose-950/40 px-1.5 py-0.5 rounded">
-                  ↓ -72%
-                </span>
+                  0%</span>
               </div>
-              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">7</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">0</div>
               <div className="text-xs text-slate-400">Yangi lidlar</div>
             </div>
 
@@ -1646,10 +1431,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <TrendingUp className="w-4 h-4 text-emerald-500" />
                 <span className="text-[11px] font-bold text-rose-500 bg-rose-50 dark:bg-rose-950/40 px-1.5 py-0.5 rounded">
-                  ↓ -68%
-                </span>
+                  0%</span>
               </div>
-              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">14 %</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">0%</div>
               <div className="text-xs text-slate-400">Konversiya stavkasi</div>
             </div>
 
@@ -1664,10 +1448,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                 <span className="text-[11px] font-bold text-rose-500 bg-rose-50 dark:bg-rose-950/40 px-1.5 py-0.5 rounded">
-                  ↓ -61%
-                </span>
+                  0%</span>
               </div>
-              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">o'zi: 7</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">0</div>
               <div className="text-xs text-slate-400">To'lov qilganlar</div>
             </div>
 
@@ -1679,7 +1462,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 </span>
               </div>
               <div className="text-lg font-bold text-slate-900 dark:text-slate-100 truncate">
-                Imron Erkinov: 1
+                —
               </div>
               <div className="text-xs text-slate-400">Eng faol sotuvchi</div>
             </div>
@@ -1694,10 +1477,10 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               </div>
               <div className="space-y-3 pt-2">
                 {[
-                  { stage: "Yangi lidlar", count: 7, pct: 100, color: "bg-[#5d5fef]" },
-                  { stage: "Bog'lanildi", count: 4, pct: 57, color: "bg-indigo-400" },
-                  { stage: "Sinov darsiga yozildi", count: 2, pct: 28, color: "bg-amber-400" },
-                  { stage: "To'lov qildi", count: 1, pct: 14, color: "bg-emerald-500" },
+                  { stage: "Yangi lidlar", count: 0, pct: 0, color: "bg-[#5d5fef]" },
+                  { stage: "Bog'lanildi", count: 0, pct: 0, color: "bg-indigo-400" },
+                  { stage: "Sinov darsiga yozildi", count: 0, pct: 0, color: "bg-amber-400" },
+                  { stage: "To'lov qildi", count: 0, pct: 0, color: "bg-emerald-500" },
                 ].map((s) => (
                   <div key={s.stage} className="space-y-1">
                     <div className="flex items-center justify-between text-xs font-semibold">
@@ -1731,7 +1514,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   { m: "Iyul", c: 0 },
                   { m: "Avg", c: 0 },
                   { m: "Sen", c: 0 },
-                  { m: "Okt", c: 8 },
+                  { m: "Okt", c: 0 },
                   { m: "Noy", c: 0 },
                   { m: "Dek", c: 0 },
                 ].map((bar) => {
@@ -1774,21 +1557,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                <tr className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                  <td className="py-3 px-4 text-slate-400">1</td>
-                  <td className="py-3 px-4 font-bold text-slate-800 dark:text-slate-100">Imron Erkinov</td>
-                  <td className="py-3 px-4 font-mono text-slate-600 dark:text-slate-300">+998993240223</td>
-                  <td className="py-3 px-4 text-center font-bold">8</td>
-                  <td className="py-3 px-4 text-center font-bold">1</td>
-                  <td className="py-3 px-4 text-center font-bold text-slate-400">0</td>
-                  <td className="py-3 px-4 text-center font-bold text-slate-400">1</td>
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold text-rose-500">12%</span>
-                      <div className="w-16 h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                        <div className="w-[12%] h-full bg-rose-500 rounded-full" />
-                      </div>
-                    </div>
+                <tr>
+                  <td colSpan={8} className="py-8 text-center text-slate-400 font-medium">
+                    Hozircha sotuvchilar statistikasi mavjud emas
                   </td>
                 </tr>
               </tbody>
@@ -1803,7 +1574,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               </h3>
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-lg">
-                  Barcha lidlar - 8 ta
+                  Barcha lidlar - 0 ta
                 </span>
                 <button className="h-8 px-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg flex items-center gap-1.5 cursor-pointer">
                   <FileSpreadsheet className="w-3.5 h-3.5" />
@@ -1871,37 +1642,12 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                     <th className="py-2.5 px-3">RO'YXATDAN O'TGAN YO'NALISH</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
-                  {[
-                    { id: 1, name: "Sobirov Oybek", phone: "+998500050512", admin: "Imron Erkinov", status: "Yangi", temp: "Issiq", course: "—", source: "—" },
-                    { id: 2, name: "Rustamov Firdavs", phone: "+998951547262", admin: "Imron Erkinov", status: "Yangi", temp: "Issiq", course: "—", source: "—" },
-                    { id: 3, name: "Najmiddinova Dilnoza", phone: "+998941503736", admin: "Imron Erkinov", status: "Yangi", temp: "Issiq", course: "—", source: "—" },
-                    { id: 4, name: "Karimova Rayhona", phone: "+998901234567", admin: "Imron Erkinov", status: "Yangi", temp: "Iliq", course: "IELTS", source: "Telegram" },
-                    { id: 5, name: "Toshmatov Bobur", phone: "+998937654321", admin: "Imron Erkinov", status: "Bog'lanildi", temp: "Issiq", course: "General English", source: "Instagram" },
-                  ].map((lead) => (
-                    <tr key={lead.id} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40">
-                      <td className="py-2.5 px-3 text-slate-400">{lead.id}</td>
-                      <td className="py-2.5 px-3 font-semibold text-slate-800 dark:text-slate-100">{lead.name}</td>
-                      <td className="py-2.5 px-3 font-mono text-slate-600 dark:text-slate-300">{lead.phone}</td>
-                      <td className="py-2.5 px-3 text-slate-600 dark:text-slate-300">{lead.admin}</td>
-                      <td className="py-2.5 px-3">
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#5d5fef]/10 text-[#5d5fef]">
-                          {lead.status}
-                        </span>
-                      </td>
-                      <td className="py-2.5 px-3">
-                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                          lead.temp === "Issiq"
-                            ? "bg-emerald-50 text-emerald-600"
-                            : "bg-amber-50 text-amber-600"
-                        }`}>
-                          {lead.temp}
-                        </span>
-                      </td>
-                      <td className="py-2.5 px-3 text-slate-500">{lead.course}</td>
-                      <td className="py-2.5 px-3 text-slate-500">{lead.source}</td>
-                    </tr>
-                  ))}
+<tbody className="divide-y divide-slate-100 dark:divide-slate-800/80">
+                  <tr>
+                    <td colSpan={8} className="py-8 text-center text-slate-400 font-medium">
+                      Hozircha lidlar mavjud emas
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -1918,10 +1664,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <Users className="w-4 h-4 text-[#5d5fef]" />
                 <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">
-                  ↑ 16%
-                </span>
+                  0%</span>
               </div>
-              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">170</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">0</div>
               <div className="text-xs text-slate-400">Jami o'quvchilar</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1 cursor-pointer">
                 To'liqroq ma'lumot
@@ -1932,7 +1677,7 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <Users className="w-4 h-4 text-purple-500" />
               </div>
-              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">20</div>
+              <div className="text-2xl font-black text-slate-900 dark:text-slate-100">0</div>
               <div className="text-xs text-slate-400">Yangi qo'shilgan o'quvchilar</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1 cursor-pointer">
                 To'liqroq ma'lumot
@@ -1957,10 +1702,9 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
               <div className="flex items-center justify-between">
                 <Clock className="w-4 h-4 text-emerald-500" />
                 <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 px-1.5 py-0.5 rounded">
-                  ↑ 7%
-                </span>
+                  0%</span>
               </div>
-              <div className="text-2xl font-black text-emerald-600">76.8%</div>
+              <div className="text-2xl font-black text-emerald-600">0%</div>
               <div className="text-xs text-slate-400">Umumiy davomat</div>
               <div className="text-[10px] text-[#5d5fef] font-semibold pt-1 cursor-pointer">
                 To'liqroq ma'lumot
@@ -2073,8 +1817,8 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   className="w-full h-8 px-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-medium text-slate-700 dark:text-slate-200 outline-hidden"
                 >
                   <option value="Guruhlar">Guruhlar</option>
-                  <option value="Feruzbek O 4-6">Feruzbek O 4-6</option>
-                  <option value="Ahmadjon E 4-6">Ahmadjon E 4-6</option>
+                  
+                  
                 </select>
               </div>
 
@@ -2086,8 +1830,8 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                   className="w-full h-8 px-2.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg font-medium text-slate-700 dark:text-slate-200 outline-hidden"
                 >
                   <option value="Barcha o'qituvchilar">Barcha o'qituvchilar</option>
-                  <option value="Feruzbek teacher">Feruzbek teacher</option>
-                  <option value="Ahmadjon teacher">Ahmadjon teacher</option>
+                  
+                  
                 </select>
               </div>
             </div>
@@ -2098,17 +1842,17 @@ export function ReportsPage({ initialSubView = "payment" }: ReportsPageProps) {
                 <div className="text-xs text-slate-600 dark:text-slate-300">
                   Jami davomat qilinishi kerak edi
                 </div>
-                <div className="text-2xl font-black text-[#5d5fef] mt-1">170</div>
+                <div className="text-2xl font-black text-[#5d5fef] mt-1">0</div>
               </div>
 
               <div className="bg-slate-50/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-xl p-3.5 text-center">
                 <div className="text-xs text-emerald-600">Kelgan</div>
-                <div className="text-2xl font-black text-emerald-600 mt-1">145</div>
+                <div className="text-2xl font-black text-emerald-600 mt-1">0</div>
               </div>
 
               <div className="bg-slate-50/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-xl p-3.5 text-center">
                 <div className="text-xs text-rose-500">Kelmagan</div>
-                <div className="text-2xl font-black text-rose-500 mt-1">25</div>
+                <div className="text-2xl font-black text-rose-500 mt-1">0</div>
               </div>
 
               <div className="bg-slate-50/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700 rounded-xl p-3.5 text-center">

@@ -96,20 +96,7 @@ export function GroupDetailsPage({
   const attendanceDates = ["01", "03", "06", "08", "10", "13", "15", "17", "20", "22"];
 
   // Attendance status mapping (studentId -> date -> 'present' | 'absent' | 'empty' | 'locked')
-  const [attendanceRecords, setAttendanceRecords] = useState<Record<number, Record<string, string>>>({
-    1: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "absent", "15": "present", "17": "empty", "20": "absent", "22": "absent" },
-    2: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    3: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "absent", "22": "present" },
-    4: { "01": "locked", "03": "present", "06": "absent", "08": "present", "10": "present", "13": "absent", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    5: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    6: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    7: { "01": "present", "03": "present", "06": "absent", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    8: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    9: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    10: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-    11: { "01": "absent", "03": "absent", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "absent", "22": "present" },
-    12: { "01": "present", "03": "present", "06": "present", "08": "present", "10": "present", "13": "present", "15": "present", "17": "empty", "20": "present", "22": "present" },
-  });
+  const [attendanceRecords, setAttendanceRecords] = useState<Record<number, Record<string, string>>>({});
 
   const toggleAttendance = (studentId: number, date: string) => {
     const current = attendanceRecords[studentId]?.[date] || "empty";
